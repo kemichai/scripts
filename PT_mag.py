@@ -30,8 +30,6 @@ with open(fm_details, "r") as open_file:
         mag.append(Mw)
         Pplu.append(P_plunge)
         Tplu.append(T_plunge)
-
-
 mag = [float(i) for i in mag]
 Pplu = [float(i) for i in Pplu]
 Tplu = [float(i) for i in Tplu]
