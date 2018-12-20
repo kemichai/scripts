@@ -32,10 +32,6 @@ with open(fm_details, "r") as open_file:
         Tplu.append(T_plunge)
 
 
-
 mag = [float(i) for i in mag]
 Pplu = [float(i) for i in Pplu]
 Tplu = [float(i) for i in Tplu]
-
-
-        
