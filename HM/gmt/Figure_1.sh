@@ -17,8 +17,6 @@ gmt set FONT_ANNOT_PRIMARY 8
 gmt set FONT_LABEL Helvetica
 gmt set LABEL_FONT_SIZE 7
 gmt set MAP_FRAME_TYPE plain
-# Directory containing topo grd file
-topodir="/home/kmichall/Desktop/topo"
 # Map boundaries
 north=30.0
 south=26.0
@@ -34,26 +32,23 @@ gmt grdimage -R -J files/tibet.80.93.26.35.3sec.filled.grd -Chim.cpt -O -K >> $o
 # ------------------------------------------------------------------------------------------------------------------- #
 gmt pscoast -W1/0.05 -Df -J -R -K -O  -P -N1/0.05p,black -L89/29.2/30/100+l+u >> $out
 
-
-
 gmt psxy -R -J files/him/thrusts.gmt -Wgray28 -Ggray28 -W.70p -Sf0.5c/0.03i+l+t -O -K >> $out
 gmt psxy -R -J files/him/normal_faults.gmt -W.70p -Wgray28 -Gblack -Sf0.5c/0.01i+l+b -O -K >> $out
 gmt psxy -R -J files/him/dextral_faults.gmt -W.70p -Sf1c/0.1i+r+s+o1 -Gblack -Wgray28 -O -K >> $out
-# ---------
+# ----------
 # Create cpt
 gmt makecpt -Cviridis -T40/110/10  > seis.cpt
 awk '{if ($9 > 50) print $8, $7, 2}' files/catalogs/HIMNT_cat.txt | gmt psxy -R -J -O -K -h1 -Sc -i0,1,2+s0.03 \
 -t0 -W0.5p,red >> $out
-#awk '{if ($3>50.0 && $1<30.5 && $2>82 && $2<92)  print $2, $1, 2}' ../files/catalogs/HC2_tib3p.txt | gmt psxy -R -J -O -K -h1 -Sc -i0,1,2+s0.03 \
-#-t0 -W0.5p,dodgerblue >> $out
 awk '{if ($4 > 50) print $3, $2, 2}' files/catalogs/NSCdeepEQS_cat_candidates.txt | gmt psxy -R -J -O -K -h1 -Sx -i0,1,2+s0.03 \
 -t0 -W0.5p,black >> $out
-echo Plot scale...
+# ----------------
+echo Plot scales...
 gmt psscale -Dx0.2/1.6+o0/0i+w1.3i/0.08i+h+e -R -J -Chim.cpt -Bx2000f1000 -By+l"Topography (m)" \
  -O -K --FONT_ANNOT_PRIMARY=7p >> $out
 gmt psscale -Dx0.2/0.7+o0/0i+w1.3i/0.08i+h+e -R -J  -Cseis.cpt -Bx20f10 -By+l"Hypocentral depth (km)" \
 -O -K --FONT_ANNOT_PRIMARY=7p >> $out
-
+# ----------------
 echo Plot country names...
 gmt pstext -R -J -O -K  -F+f6p,Helvetica,black+jBL+a0 -Gwhite >> $out << END
 83.2 27 INDIA
@@ -64,40 +59,10 @@ gmt pstext -R -J -O -K  -F+f6p,Helvetica,black+jBL+a0 -Gwhite >> $out << END
 END
 # -=================================================================================================================- #
 # ------------------------------------------------------------------------------------------------------------------- #
-
-#echo Plot focal mechanisms
-#echo Plotting previous studies
-#gmt psmeca -R -J -Sa0.3 -Zseis.cpt -O -K >> $out << END
-#86.567 28.654 85 140 46 -163 5.5 0 0
-#86.591 26.731 51 246 20   22 6.4 0 0 1988
-#87.984 27.878  70 112 82 -179 4.7 0 0
-#87.958 28.151  80  46 66 -22  4.9 0 0
-#89.141 29.566 85 220 60 -24  4.9 0 0
-#89.544 29.782 90 215 52 -68  5.4 0 0
-#END
-##
-## gcmt
-#gmt psmeca -R -J -Sa0.2 -Zseis.cpt -O -K >> $out << END
-#89.05	27.42	44	209	51	-2	6.2	0	0
-#87.09	28.6	81	140	46	-163	5.1	0	0
-#89.82	26.92	56	40	70	-21	5.4	0	0
-#87.95	28.08	70	109	62	179	4.7	0	0
-#86.77	28.41	85	12	69	-16	5.1	0	0 2010
-#86.77	28.41	85	12	69	-16	5.1	0	0 2010
-#88.35	27.44	46	216	72	-12	6.9	0	0
-#END
-#gmt psmeca -R -J -Sa0.5 -Zseis.cpt -O -K >> $out << END
-#87.95	28.08	70	109	62	179	4.7	0	0 2005
-#86.77	28.41	85	12	69	-16	5.1	0	0 2010
-#89.05	27.42	44	209	51	-2	6.2	0	0 1980
-#END
-
-
-#---------------------------------------------------------------------------------------------------------- #
 echo Plot focal mechanisms
 # ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  #
 echo Plotting Udayapur earthquake...
-# 1988 Udayapur Chen and Kao 1996
+# 1988 Udayapur (Chen and Kao 1996)
 gmt psxy -R -J -Wblack -W0.5p -O -K  >> $out << END
 86.62 26.75
 86.62 26.25
@@ -113,7 +78,7 @@ gmt pstext -R -J -O -K  -F+f5p,Helvetica,black+jBL+a0 -Gwhite >> $out << END
 86.58 26.05 IV
 END
 # ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  #
-#1986 Chen et al 1988
+# 1986 (Chen et al 1988)
 gmt psxy -R -J -Wblack -W0.5p -O -K  >> $out << END
 86.567 28.654
 87 29
@@ -129,7 +94,7 @@ gmt pstext -R -J -O -K  -F+f5p,Helvetica,black+jBL+a0 -Gwhite >> $out << END
 87.12 29 III
 END
 # ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  #
-#1991 Zhu and Helmberger 1996
+# 1991 (Zhu and Helmberger, 1994)
 gmt psxy -R -J -Wblack -W0.5p -O -K  >> $out << END
 87.984 27.878
 88.7 28.2
@@ -145,7 +110,7 @@ gmt pstext -R -J -O -K  -F+f5p,Helvetica,black+jBL+a0 -Gwhite >> $out << END
 88.82 28.2 V
 END
 # ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  #
-#1992 Zhu and Helmberger 1996
+# 1992 (Zhu and Helmberger, 1996)
 gmt psxy -R -J -Wblack -W0.5p -O -K  >> $out << END
 87.958 28.151
 88.45 28.5
@@ -161,7 +126,7 @@ gmt pstext -R -J -O -K -F+f5p,Helvetica,black+jBL+a0 -Gwhite >> $out << END
 88.56 28.5 VI
 END
 # ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  #
-# 1973, 1976 Molnar and Chen 1983; Chen et al 1981
+# 1973, 1976 (Molnar and Chen 1983; Chen et al 1981)
 gmt pstext -R -J -O -K  -F+f5p,Helvetica,black+jBL+a0 -Gwhite >> $out << END
 #89.22 29.566 M4.9 I # 1973
 #89.64 29.782 M5.4 II # 1976
@@ -173,7 +138,7 @@ gmt psmeca -R -J -Sa0.3 -Zseis.cpt -O -K >> $out << END
 89.544 29.782 90 215 52 -68  5.4 0 0
 END
 # ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  #
-#2005 GCMT 200503262032A XIZANG
+# 2005 GCMT 200503262032A XIZANG
 gmt psxy -R -J -Wblack -W0.5p -O -K  >> $out << END
 87.95	28.08
 88.45 28.3
@@ -189,7 +154,7 @@ gmt pstext -R -J -O -K -F+f5p,Helvetica,black+jBL+a0 -Gwhite >> $out << END
 88.56 28.3 X
 END
 # ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  #
-#2010 GCMT 201002260442A XIZANG
+# 2010 GCMT 201002260442A XIZANG
 gmt psxy -R -J -Wblack -W0.5p -O -K  >> $out << END
 86.77	28.41
 87.4 28.8
@@ -223,9 +188,8 @@ gmt pstext -R -J -O -K -F+f5p,Helvetica,black+jBL+a0 -Gwhite >> $out << END
 89.66	27.0 IX
 89.15 27.42 VII
 END
-
 # ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  #
-echo Alvizuri fm Event 20020508175659380 M 3.70
+echo Ploting Alvizuri fm 20020508175659380 M 3.70
 # (2002-05-08T17:56:59 UTC)
 gmt psxy -R -J -Wblack -W0.5p -O -K  >> $out << END
 86.4885  28.5825
@@ -241,10 +205,7 @@ gmt pstext -R -J -O -K -F+f5p,Helvetica,black+jBL+a0 -Gwhite >> $out << END
 #86.4885  29.05 M3.7 2002
 86.4885  29.05 VII
 END
-
-
-
-# Tobias' fms
+# Dielh et al. fms
 gmt psmeca -R -J -Sm0.3 -Zseis.cpt -O -K >> $out << END
 89.4094  26.7404   24.00  -0.680  -0.996   1.677   0.864  -0.449   0.078   21   89.4094  26.7404
 89.9439  26.1699   18.00   1.328  -4.385   3.058   0.112   1.843   1.311   21   89.9439  26.1699 COMMENT
@@ -269,29 +230,8 @@ gmt psmeca -R -J -Sm0.3 -Zseis.cpt -O -K >> $out << END
 92.5296  27.3003   12.00   0.206  -1.254   1.048  -0.952   0.567  -0.908   22   92.5296  27.3003 COMMENT
 92.5083  27.0763   42.00   1.021   1.449  -2.470   3.152  -0.687   3.280   22   92.5083  27.0763 COMMENT
 END
-
-#
-#
-#11 19/10/2001  87.5  80 83 49 −135  285/57 23/5  S de la Torre et al. (2007)
-#13 05/01/2002  87.68 76 86 88 166   132/9 40/11  S de la Torre et al. (2007)
-# 15 08/05/2002  86.52 84 125 65 −168 195/19 103/7 S de la Torre et al. (2007) same as alvizuri
-#17 16/07/2002  87.75 62 333 31 −124 310/10 46/31 S de la Torre et al. (2007)
-#18 18/07/2002  87.93 90 181 76 30   317/40 211/  S de la Torre et al. (2007)
-#19 29/10/2002  87.63 60 89 76 −136  50/41 305/16 S de la Torre et al. (2007)
-#20 26/02/2003  86.58 77 79 49 −21   345/26 79/9  S de la Torre et al. (2007)
-# de la Torre 2007
-gmt psmeca -R -J -Sa0.3 -Zseis.cpt -O -K >> $out << END
-#87.50 28.18 80  83  49 -135 3.3 0 0
-#87.68 28.13 76  86  88  166 3.4 0 0
-#86.52 28.52 84 125  65 -168 3.6 0 0 same as alvizuri
-#87.75 27.81 62 333  31 -124 3.7 0 0
-#87.93 28.21 90 181  76   30 3.6 0 0
-#87.63 28.11 60  89  76 -136 3.6 0 0
-#86.58 28.46 77  79  49  -21 3.9 0 0
-END
-
-# ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  #
-echo de la Torre
+# |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  #
+echo de la Torre et al 2007
 gmt psxy -R -J -Wblack -W0.5p -O -K  >> $out << END
 87.50 28.18
 87.7  28.6
@@ -375,38 +315,6 @@ END
 gmt pstext -R -J -O -K -F+f5p,Helvetica,black+jBL+a0 -Gwhite >> $out << END
 87.93  28.667 XVII
 END
-
-
-
-
-#89.6006  26.5733   18.00   0.186  -4.431   4.246   0.097  -0.165   0.483
-#92.5296  27.3003   12.00   0.206  -1.254   1.048  -0.952   0.567  -0.908
-#92.5501  26.6835   42.00   1.230  -1.356   0.126   0.332  -0.500  -0.611
-#92.5423  26.7081   42.00   1.225  -1.196  -0.029  -0.137   0.362  -0.406
-#90.2555  28.0158   70.00  -0.008  -0.970   0.979  -0.384   0.054   0.004
-#92.7158  27.6231    9.00   0.474  -0.929   0.455   0.445  -0.535  -0.119
-#91.2771  27.2825   15.00   2.390  -6.432   4.042   0.999  -3.264  -7.495
-#88.9414  27.2020   21.00  -0.345  -3.710   4.055   1.185  -1.288   1.702
-#92.6848  27.5985    9.00   2.470  -3.562   1.092   2.712  -1.428  -0.526
-#92.4497  27.1611    9.00   0.265  -1.336   1.071  -0.180   1.722   1.686
-#90.9386  27.5188   21.00   0.965  -0.287  -0.679   2.834   0.552  -0.566
-#89.4094  26.7404   24.00  -0.680  -0.996   1.677   0.864  -0.449   0.078
-#91.3724  26.0667   15.00   0.143  -0.629   0.486  -0.760   1.449   0.527
-#92.4051  27.5387   12.00   4.312  -7.793   3.481   6.100  -3.799  -1.128
-#89.9392  26.1621   18.00   0.270  -1.030   0.760   0.007   0.555   0.519
-#89.9392  26.1547   18.00   1.155  -6.035   4.881  -0.152   2.496   2.592
-#89.9439  26.1699   18.00   1.328  -4.385   3.058   0.112   1.843   1.311
-#90.2721  26.0376   15.00   0.037  -3.233   3.196   1.633   0.725   7.689
-#90.3520  26.6192   21.00   1.345  -6.059   4.714   0.493  -2.403  -0.837
-#92.3784  27.6804   12.00   1.757  -2.747   0.990   0.234  -0.875   1.258
-#END
-#gmt psmeca -R -J -Sa0.2 -Zseis.cpt -O -K >> $out << END
-#90.320  27.706  22.0 304  07  121 3.0 0 0
-#END
-#Qal                  OT-Time TT-Lat   TT-Lon TT-Dep Mag-Ml RMS   GAP MDist Nobs Str Dip Rake
-#B       2013/02/21-13:33:23.4 27.706   90.320   22.0 Ml 3.0 0.120 164  24.9   30 304  07  121
-#A       2014/01/28-16:54:40.8 27.244   91.391   12.2 Ml 3.4 0.090  85  12.3   32 136  66  108
-#B       2013/11/11-17:06:06.4 27.233   90.342   23.5 Ml 3.9 0.210  80  29.0   48 160  70 -175
 # -=================================================================================================================- #
 echo Plot seismic stations...
 awk '{print $4, $3}' files/sta_HiCLIMB.txt |
@@ -479,25 +387,8 @@ gmt psxy -R -J -Sx.3 -W1.5p,black -Gwhite -O -K  >> $out << END
 86.9250 27.9881
 END
 
-## 1 to 4 stands for -1 to 4
-#gmt psmeca -R -J -Sa0.3 -Zseis.cpt -O -K >> $out << END
-#83.9 26.825 46	90	90	0	3.0 0 0
-#83.9 26.875 46	45	80	0	4.0 0 0
-#83.9 26.95 46	90	70	0	5.0 0 0
-#83.9 27.02 46	90	90	0	6.0 0 0
-#END
-#
-#gmt pstext -R -J -O -K  -F+f6p,Helvetica,gray10+jBL+a0  >> $out << END
-#83.99 27.0  M=6
-##83.92 26.80  M=4.0
-##83.92 26.76  M=3.0
-##83.92 26.73  M=2.0
-#83.99 26.79  M=3
-#END
-
-
 # ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| #
-# Make inset (top left)
+# Inset (top left)
 # ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| #
 # ------------------------------------------------------------------------------------------------------------------- #
 # Inset boundaries
@@ -511,40 +402,25 @@ gmt pscoast -W1/0.05 -Dl $proj -R$west/$east/$south/$north -K -O -X0 -Y10.25 -B1
 # ------------------------------------------------------------------------------------------------------------------- #
 echo Using this clipped grid ....
 gmt grdimage -R -J files/tibet.70.100.25.40.0.5min.grd -Chim.cpt -O -K >> $out
-#gmt grdimage -R -J $topodir/tibet.80.93.26.35.3sec.filled.grd -Chim.cpt -O -K >> $out
-
 # ------------------------------------------------------------------------------------------------------------------- #
 #gmt pscoast -W1/0.05 -Df -J -R -K -O -Sazure1 -P -N1/0.05p,black -L75/28/29/500+l+u >> $out
 # NO borders
 gmt pscoast -W1/0.05 -Df -J -R -K -O -P -L75/28/29/500+l+u >> $out
-
-# ---
-
 gmt psxy -R -J files/him/thrusts.gmt -Wlightred -Glightred -W0.5p -Sf0.6c/0.01i+l+t -O -K >> $out
 gmt psxy -R -J files/him/normal_faults.gmt -W.0p -Wdodgerblue -Gdodgerblue -Sf0.5c/0.01i+l+b -O -K >> $out
 gmt psxy -R -J files/him/dextral_faults.gmt -W.0p -Sf1c/0.1i+r+s+o1 -Ggray20 -Wgray20 -O -K >> $out
 #gmt psxy -R -J ../files/him/sinistral_faults.gmt -W.8p -Sf1c/0.1i+l+s+o1 -Gblack -O -K >> $out
-# ---------
-#echo Plot tectonic plates and tectonic features (e.g. Tibet etc)
 gmt pstext -R -J -O -K  -F+f7p,Helvetica,black+jBL+a0 -Gwhite >> $out << END
 78.4 26.0 INDIA
 84.0 35.0 ASIA
 END
 
-
-
 gmt psxy -R -J files/him/dextral_faults.gmt -W.0p -Sf1c/0.1i+r+s+o1 -Ggray20 -Wgray20 -O -K >> $out
-
-#gmt psmeca -R -J gcmt_all_no_mags.dat -Sa0.1 -Gblack -O -K -t40 >> $out
-#gmt psmeca -R -J gcmt_all_no_mags.dat -Sa0.08 -Gblack -O -K  >> $out
-
-
-
 gmt pstext -R -J -O -K  -F+f6p,Helvetica,gray20+jBL+a0 -Gwhite >> $out << END
 90.5 29 Study
 90.5 28 Area
 END
-##study area
+## Study area
 gmt psxy -R -J -Wthin,black -O -K  >> $out << END
 83 26
 90 26
