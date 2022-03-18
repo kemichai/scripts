@@ -245,7 +245,7 @@ END
 gmt pstext -R -J -O -K -F+f5p,Helvetica,black+jBL+a0 -Gwhite >> $out << END
 87.65  28.667 XIII
 END
-###
+##
 gmt psxy -R -J -Wblack -W0.5p -O -K  >> $out << END
 87.68 28.13
 88.2 28.6
@@ -259,7 +259,7 @@ END
 gmt pstext -R -J -O -K -F+f5p,Helvetica,black+jBL+a0 -Gwhite >> $out << END
 88.2  28.667 XIV
 END
-##################
+##
 gmt psxy -R -J -Wblack -W0.5p -O -K  >> $out << END
 87.75 27.81
 87.55  27.55
@@ -273,7 +273,7 @@ END
 gmt pstext -R -J -O -K -F+f5p,Helvetica,black+jBL+a0 -Gwhite >> $out << END
 87.55  27.42 XV
 END
-##################
+##
 gmt psxy -R -J -Wblack -W0.5p -O -K  >> $out << END
 87.93 28.21
 88.45 28.7
@@ -287,7 +287,7 @@ END
 gmt pstext -R -J -O -K -F+f5p,Helvetica,black+jBL+a0 -Gwhite >> $out << END
 88.52 28.75 XVI
 END
-##################
+##
 gmt psxy -R -J -Wblack -W0.5p -O -K  >> $out << END
 86.58 28.46
 86.4 28.2
@@ -301,7 +301,7 @@ END
 gmt pstext -R -J -O -K -F+f5p,Helvetica,black+jBL+a0 -Gwhite >> $out << END
 86.3 28.07 XVIII
 END
-###
+##
 gmt psxy -R -J -Wblack -W0.5p -O -K  >> $out << END
 87.63 28.11
 87.95  28.6
@@ -389,7 +389,6 @@ END
 
 # ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| #
 # Inset (top left)
-# ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| #
 # ------------------------------------------------------------------------------------------------------------------- #
 # Inset boundaries
 north=40.0
@@ -432,4 +431,6 @@ END
 gmt psxy -R -J -T -O >> $out
 gmt psconvert -Tf -A $out
 evince ${out%.*}.pdf
-
+# ------------------------------------------------------------------------------------------------------------------- #
+# Delete temporary files
+rm frontiers_manu_figure_1.eps seis.cpt

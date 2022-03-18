@@ -30,7 +30,7 @@ echo Make basemap...
 gmt pscoast -W1/0.05 -Dl $proj -R$west/$east/$south/$north -K -Y1 -B2WSen -P > $out
 # ------------------------------------------------------------------------------------------------------------------- #
 echo Using this clipped grid...
-gmt grdimage -R -J ../files/tibet.80.93.26.35.3sec.filled.grd -Chim.cpt -O -K >> $out
+gmt grdimage -R -J files/tibet.80.93.26.35.3sec.filled.grd -Chim.cpt -O -K >> $out
 # ------------------------------------------------------------------------------------------------------------------- #
 gmt pscoast -W1/0.05 -Df -J -R -K -O  -P -N1/0.05p,black -L89/29.2/30/100+l+u >> $out
 # ------------------------------------------------------------------------------------------------------------------- #
@@ -50,20 +50,20 @@ gmt psxy -R -J -Wthin,black -O -K  >> $out << END
 86.3 28.85
 86.3 27.6
 END
-gmt psxy -R -J ../files/him/thrusts.gmt -Wgray28 -Ggray28 -W.70p -Sf0.5c/0.03i+l+t -O -K >> $out
-gmt psxy -R -J ../files/him/normal_faults.gmt -W.70p -Wgray28 -Gblack -Sf0.5c/0.01i+l+b -O -K >> $out
-gmt psxy -R -J ../files/him/dextral_faults.gmt -W.70p -Sf1c/0.1i+r+s+o1 -Gblack -Wgray28 -O -K >> $out
+gmt psxy -R -J files/him/thrusts.gmt -Wgray28 -Ggray28 -W.70p -Sf0.5c/0.03i+l+t -O -K >> $out
+gmt psxy -R -J files/him/normal_faults.gmt -W.70p -Wgray28 -Gblack -Sf0.5c/0.01i+l+b -O -K >> $out
+gmt psxy -R -J files/him/dextral_faults.gmt -W.70p -Sf1c/0.1i+r+s+o1 -Gblack -Wgray28 -O -K >> $out
 # -=================================================================================================================- #
 echo Plot seismic stations...
-awk '{print $4, $3}' ../files/sta_HIMNT.txt |
+awk '{print $4, $3}' files/sta_HIMNT.txt |
     gmt psxy -R -J -Si.2 -W0.5p -Gwhite -O -K -t20>> $out
-awk '{print $4, $3}' ../files/sta_HiCLIMB.txt |
+awk '{print $4, $3}' files/sta_HiCLIMB.txt |
     gmt psxy -R -J -St.2 -W0.5p -Gwhite  -O -K -t20 >> $out
 #awk '{print $4, $3}' ../files/sta_HiCLIMB_not_used.txt |
 #    gmt psxy -R -J -Si.2 -W0.5p,white -O -K  >> $out
-awk '{print $4, $3}' ../files/sta_bhutan_pilot.txt |
+awk '{print $4, $3}' files/sta_bhutan_pilot.txt |
     gmt psxy -R -J -Si.2 -W0.5p -Gwhite -t20 -O -K  >> $out
-awk '{print $4, $3}' ../files/sta_IC.txt |
+awk '{print $4, $3}' files/sta_IC.txt |
     gmt psxy -R -J -Si.2 -W0.5p -Gwhite -O -K  >> $out
 # -=================================================================================================================- #
 # ------------------------------------------------------------------------------------------------------------------- #
@@ -73,7 +73,7 @@ gmt makecpt -Cviridis -T40/110/5 > seis.cpt
 # -=================================================================================================================- #
 echo Plotting seismicity data...
 # < 40 km depths with hq locations
-awk '{print $1, $2, 3}' shallow_hq.dat | gmt psxy -S+i -i0,1,2s0.01 -W.7,black \
+awk '{print $1, $2, 3}' files/shallow_hq.dat | gmt psxy -S+i -i0,1,2s0.01 -W.7,black \
 -R -J -B -O -K >> $out
 gmt pstext -R -J -O -K -F+f6p,Helvetica,gray20+jBL+a0 -Gwhite -W0.5,black  >> $out << END
 83.5 27.57 MFT
@@ -81,9 +81,9 @@ gmt pstext -R -J -O -K -F+f6p,Helvetica,gray20+jBL+a0 -Gwhite -W0.5,black  >> $o
 88.0 28.6 1
 86.0 27.0 2
 END
-awk '{print $1, $2, $4}' deep_lq.dat | gmt psxy -Sc -i0,1,2s0.07 -W.25,black \
+awk '{print $1, $2, $4}' files/deep_lq.dat | gmt psxy -Sc -i0,1,2s0.07 -W.25,black \
 -R -J -B -O -K  >> $out
-awk '{print $1, $2, $3, $4}' ../All_events.dat | gmt psxy -i0,1,2,3s0.07 -Sc -R -J \
+awk '{print $1, $2, $3, $4}' files/All_events.dat | gmt psxy -i0,1,2,3s0.07 -Sc -R -J \
 -O -K  -W.25 -Cseis.cpt >> $out
 # -=================================================================================================================- #
 # ------------------------------------------------------------------------------------------------------------------- #
@@ -274,7 +274,7 @@ END
 gmt pstext -R -J -O -K -F+f5p,Helvetica,black+jBL+a0 -Gwhite >> $out << END
 87.65  28.667 XIII
 END
-###
+##
 gmt psxy -R -J -Wblack -W0.5p -O -K  >> $out << END
 87.68 28.13
 88.2 28.6
@@ -288,7 +288,7 @@ END
 gmt pstext -R -J -O -K -F+f5p,Helvetica,black+jBL+a0 -Gwhite >> $out << END
 88.2  28.667 XIV
 END
-##################
+##
 gmt psxy -R -J -Wblack -W0.5p -O -K  >> $out << END
 87.75 27.81
 87.55  27.55
@@ -302,7 +302,7 @@ END
 gmt pstext -R -J -O -K -F+f5p,Helvetica,black+jBL+a0 -Gwhite >> $out << END
 87.55  27.42 XV
 END
-##################
+##
 gmt psxy -R -J -Wblack -W0.5p -O -K  >> $out << END
 87.93 28.21
 88.45 28.7
@@ -316,7 +316,7 @@ END
 gmt pstext -R -J -O -K -F+f5p,Helvetica,black+jBL+a0 -Gwhite >> $out << END
 88.52 28.75 XVI
 END
-##################
+##
 gmt psxy -R -J -Wblack -W0.5p -O -K  >> $out << END
 86.58 28.46
 86.4 28.2
@@ -398,16 +398,16 @@ echo Make basemap...
 gmt pscoast -W1/0.05 -Dl $proj -R$west/$east/$south/$north -K -O -Y11 -X-0.01 -B0.5WSen -P >> $out
 # ------------------------------------------------------------------------------------------------------------------- #
 echo Using this clipped grid...
-gmt grdimage -R -J ../files/tibet.80.93.26.35.3sec.filled.grd -Chim.cpt -O -K >> $out
+gmt grdimage -R -J files/tibet.80.93.26.35.3sec.filled.grd -Chim.cpt -O -K >> $out
 # ------------------------------------------------------------------------------------------------------------------- #
 gmt pscoast -W1/0.05 -Df -J -R -K -O  -P -N1/0.05p,black -L88/28.7/30/40+l+u >> $out
 # ------------------------------------------------------------------------------------------------------------------- #
-awk '{print $1, $2, $4}' deep_lq.dat | gmt psxy -Sc -i0,1,2s0.07 -W.25,black \
+awk '{print $1, $2, $4}' files/deep_lq.dat | gmt psxy -Sc -i0,1,2s0.07 -W.25,black \
 -R -J -B -O -K  >> $out
 # All_events
-awk '{print $1, $2, $3, $4}' ../All_events.dat | gmt psxy -i0,1,2,3s0.07 -Sc -R -J \
+awk '{print $1, $2, $3, $4}' files/All_events.dat | gmt psxy -i0,1,2,3s0.07 -Sc -R -J \
 -O -K  -W.25 -Cseis.cpt >> $out
-awk '{print $1, $2, 3}' shallow_hq.dat | gmt psxy -S+i -i0,1,2s0.01 -W.7,black \
+awk '{print $1, $2, 3}' files/shallow_hq.dat | gmt psxy -S+i -i0,1,2s0.01 -W.7,black \
 -R -J -B -O -K >> $out
 ##---------------------------------------------------------------------------------------------------------- #
 ## Plot cross section surface trace lines
@@ -484,3 +484,6 @@ END
 gmt psxy -R -J -T -O >> $out
 gmt psconvert -Tf -A $out
 evince ${out%.*}.pdf
+# ------------------------------------------------------------------------------------------------------------------- #
+# Delete temporary files
+rm frontiers_manu_figure_2.eps seis.cpt topo.cpt
