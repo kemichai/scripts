@@ -74,4 +74,4 @@ gmt psconvert -Tf -A $out
 evince ${out%.*}.pdf
 # ------------------------------------------------------------------------------------------------------------------- #
 # Delete temporary files
-rm frontiers_manu_figure_3CD.eps projection2_hdd.dat projection2.dat projection1_hdd.dat projection1.dat
+rm frontiers_manu_figure_3CD.eps  projection2_hdd.dat projection2.dat projection1_hdd.dat projection1.dat
