@@ -13,7 +13,7 @@ Author: [`Konstantinos Michailos`](https://github.com/kemichai)
 [![GitHub stars](https://img.shields.io/github/stars/kemichai/codes_and_stuff?style=social)]()
 [![](https://img.shields.io/github/forks/kemichai/codes_and_stuff?style=social)]()
 
-### To do: ###
+## To do: 
 * Add more stuff from NZ projects
 * Finish adding plots from HM
 
