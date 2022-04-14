@@ -2,8 +2,6 @@
 The HM and NZ folders stand for Himalayas and New Zealand. And they contain 
 codes from various projects in these areas.
 
-Author: [`Konstantinos Michailos`](https://github.com/kemichai) 
-
 [![](https://img.shields.io/github/last-commit/kemichai/codes_and_stuff)]()
 [![](https://img.shields.io/github/commit-activity/m/kemichai/codes_and_stuff)]()
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/kemichai/codes_and_stuff)]()
