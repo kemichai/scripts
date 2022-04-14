@@ -19,5 +19,5 @@ Author: [`Konstantinos Michailos`](https://github.com/kemichai)
 
 
 
-<!---[![HitCount](http://hits.dwyl.com/kemichai/codes_and_stuff.svg)](http://hits.dwyl.com/kemichai/codes_and_stuff)--->
+[![HitCount](http://hits.dwyl.com/kemichai/codes_and_stuff.svg)](http://hits.dwyl.com/kemichai/codes_and_stuff)
 [![HitCount](https://hits.dwyl.com/kemichai/codes_and_stuff.svg?style=flat&show=unique)](http://hits.dwyl.com/kemichai/codes_and_stuff)
