@@ -53,12 +53,12 @@ def dist_calc(loc1, loc2):
     return dist
 
 
-def plot_shelly2007(catalog, prof_points_str, prof_points_dip,
-                    swath=50,
-                    point_names_str = ["A","A'"],
-                    point_names_dip = ["B","B'"],
-                    profile_name='AB',
-                    show=True, save=True):
+def plot_migration(catalog, prof_points_str, prof_points_dip,
+                   swath=50,
+                   point_names_str = ["A","A'"],
+                   point_names_dip = ["B","B'"],
+                   profile_name='AB',
+                   show=True, save=True):
 
     def calculate_profile(ref_pnt, profile_width):
         prof_dist, prof_dep, prof_mag, prof_time, prof_str_orig, prof_index = [], [], [], [], [], []
