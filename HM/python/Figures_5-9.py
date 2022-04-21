@@ -88,13 +88,13 @@ catalog =  cat_1
 catalog.events.sort(key=lambda e: e.origins[-1].time)
 BB_cross_section = np.array([[87, 28.15], [87.3, 28.7]])
 AA_cross_section = np.array([[86.25, 28.75], [88.0, 28.2]])
-mp.plot_shelly2007(catalog,
-                prof_points_str=A_cross_section,
-                prof_points_dip=B_cross_section,
-                swath=250,
-                profile_name='AB',
-                point_names_str = ["A","A'"],
-                point_names_dip = ["B","B'"])
+mp.plot_migration(catalog,
+                  prof_points_str=A_cross_section,
+                  prof_points_dip=B_cross_section,
+                  swath=250,
+                  profile_name='AB',
+                  point_names_str = ["A","A'"],
+                  point_names_dip = ["B","B'"])
 
 # --------------------------------------------------------------------------- #
 # Figures 10 three dimensional figure --------------------------------------- #
