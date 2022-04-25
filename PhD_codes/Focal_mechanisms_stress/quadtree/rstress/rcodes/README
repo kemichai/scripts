@@ -1,0 +1,31 @@
+There are two zip files on this page:
+http://homepages.ecs.vuw.ac.nz/~rarnold/public_files/
+
+Rstress.zip
+tab.zip
+
+Unpack Rstress.zip and it will create a directory Rstress/ with a whole lot of
+R code and a few subdirectories Upack tab.zip (it's large) and it will create a
+directory tab/ with a set of binary files that R needs Move that tab/ directory
+to make it a subdirectory of the Rstress directory.
+
+You need to install R, and also install the add-on packages: "adapt" and "boot"
+when you do so.
+
+Once R is installed the code you need to run is in
+drive_inversion.q
+and
+post_process.q
+
+You need to put a .csv file in the Rstress/indata/ directory for every
+inversion you want to do, and then edit drive_inversion.q so it know which
+files to use.  There are two example files crete.csv and dixie.csv already
+there, which you can run as examples.  Use the naming convention XXX.csv where
+XXX is the name of the set of focal mechanisms.  Each .csv file needs
+strike/dip/rake/error comma separated, one per line, all values in degrees.
+
+Running the R code (which you can just copy and paste into R) will do the
+inversion and create a whole lot of output files in Rstress/outdata/ They are
+described in post_process.q If the output files have the information you need
+then you may not need to run anything else (post_process.q just has code to
+produce additional plots which you may want to use)
