@@ -14,10 +14,10 @@
 * [HYPOINVERSE](https://www.usgs.gov/node/279394) - Standard earthquake location program.
 
 ## RFs
-* [RF](https://rf.readthedocs.io/en/latest/index.html) - Receiver functions (T. Eulenfeld)
-* [RfPy](https://paudetseis.github.io/RfPy/) - More receiver functions
-* [Pyraysum](https://paudetseis.github.io/PyRaysum/index.html)
-* [seispy](https://github.com/xumi1993/seispy)
+* [RF](https://rf.readthedocs.io/en/latest/index.html) -  Python framework for receiver function analysis.
+* [RfPy](https://paudetseis.github.io/RfPy/) - Python tools for calculating teleseismic receiver functions.
+* [Pyraysum](https://paudetseis.github.io/PyRaysum/index.html) - Python wrapper around the Fortran software Raysum.
+* [seispy](https://github.com/xumi1993/seispy) -  Python module for processing seismological data and calculating Receiver Functions.
 
 Re-orient horizontal seismometers
 * [OrientPy](https://github.com/nfsi-canada/OrientPy) - Seismic station orientation tools.
