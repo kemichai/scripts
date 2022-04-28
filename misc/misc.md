@@ -41,7 +41,9 @@ Re-orient horizontal seismometers
 
 ## Geophysics
 * [SimPEG](http://docs.simpeg.xyz/index.html) - A python package for simulation and gradient based parameter estimation in the context of geophysical applications.
-
+* [occamypy](https://github.com/fpicetti/occamypy) -An object-oriented optimization framework for small- and large-scale problems
+* [devito](https://github.com/devitocodes/devito) - Fast Stencil Computation from Symbolic Specification
+* [awesome-open-geoscience](https://github.com/softwareunderground/awesome-open-geoscience) - List of repositories that make our lives as geoscientists easier or just more awesome
 
 
 ## InSAR
