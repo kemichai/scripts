@@ -26,7 +26,7 @@ WORK_DIR = os.getcwd()
 # COMMENTED; USE FOR FOCAL MECH CATALOG
 # CAT_PATH = WORK_DIR + '/quakeml_file/subset_cat.xml'
 
-CAT_PATH = WORK_DIR + '/quakeml_file/Southern_Alps_NZ_microseismicity_catalog_HDD.xml'
+CAT_PATH = WORK_DIR + '/quakeml_file/Final_foc_mec_catalog.xml'
 
 print('>>> Reading catalog...')
 catalog = read_events(CAT_PATH)
