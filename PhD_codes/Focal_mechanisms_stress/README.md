@@ -2,7 +2,7 @@
 
 ## Description ##
 Number of codes in Python, Matlab and R to reproduce Figure 2
-from Michailos et al., 2020 (Tectonophysics).
+from Michailos et al., 2020 in [Tectonophysics](https://www.sciencedirect.com/science/article/abs/pii/S0040195119303208?via%3Dihub).
 
 ### Requirements:
 - Python
