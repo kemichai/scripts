@@ -54,7 +54,7 @@ Re-orient horizontal seismometers
 * [Time series analysis of InSAR data](https://github.com/yumorishita/LiCSBAS)
 * [Comet webinars](https://www.youtube.com/channel/UCtFDytX1hgjvlS4NH48M2oQ/videos)
 * [Nisar workshop August 30 - September 1](https://sites.google.com/view/nisarscience2022/home/)
-
+* [European Ground Motion Service (EGMS)](https://land.copernicus.eu/pan-european/european-ground-motion-service)
 
 ### Visualization: On using color palletes 
 * [Python-Graph-Gallery](https://www.python-graph-gallery.com/) - Graphs and plots
