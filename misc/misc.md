@@ -61,6 +61,7 @@ Re-orient horizontal seismometers
 * [Perceptually Uniform Colour Maps - Peter Kovesi](https://peterkovesi.com/projects/colourmaps/)
 * [The Rainbow Colour Map (repeatedly) considered harmful](https://blogs.egu.eu/divisions/gd/2017/08/23/the-rainbow-colour-map/)
 * [Why rainbow colour scales can be misleading](https://www.climate-lab-book.ac.uk/2016/why-rainbow-colour-scales-can-be-misleading/)
+* [More on rainbow pallete... ](https://doi.org/10.5194/hess-25-4549-2021)
 * [Colour maps - Fabio Crameri](https://www.fabiocrameri.ch/)
 * [Color maps](https://www.fabiocrameri.ch/colourmaps/)
 * [Test figure is colorblind friendly](https://www.color-blindness.com/coblis-color-blindness-simulator/)
