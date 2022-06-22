@@ -28,7 +28,6 @@ paths = ['/media/kmichall/SEISMIC_DATA/Data_archive/GANSSER',
          '/media/kmichall/SEISMIC_DATA/Data_archive/NK_KKN',
          '/media/kmichall/SEISMIC_DATA/Data_archive/EVK2',
          '/media/kmichall/SEISMIC_DATA/Data_archive/NQ']
-# TODO: Need to fix the loop through the days to make it loop through the wav paths as well!!!
 
 # stah = []
 # with open('/home/kmichall/Desktop/Codes/bitbucket/him_seismicity/maps/files/sta_NAMASTE.txt', 'r') as f:

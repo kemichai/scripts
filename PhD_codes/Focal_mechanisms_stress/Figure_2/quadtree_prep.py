@@ -22,7 +22,6 @@ import numpy as np
 WORK_DIR = os.getcwd()
 
 # Read catalog with focal mechanisms (quakeML format)
-# TODO: do the same for a text file
 # COMMENTED; USE FOR FOCAL MECH CATALOG
 # CAT_PATH = WORK_DIR + '/quakeml_file/subset_cat.xml'
 

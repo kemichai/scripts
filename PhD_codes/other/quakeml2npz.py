@@ -45,7 +45,7 @@ def read_cat4vars(cat_path, output_filename='parameters.npz'):
     return
 
 
-# Create the npz file 
+# Create the npz file
 a = read_cat4vars('/home/kmichailos/Desktop/codes/github/codes/PhD_codes/Focal_mechanisms_stress/quakeml_file/subset_cat.xml')
 
 # Read the npz file
