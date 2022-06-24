@@ -75,6 +75,8 @@ Re-orient horizontal seismometers
 * [Flake8](https://flake8.pycqa.org/): Python style guide checker
 * [strftime](http://strftime.org/): Python strftime reference
 * [regex101](https://regex101.com/): Online regular expressions tester and debugger
+* [CS50's Introduction to Programming with Python](https://www.edx.org/course/cs50s-introduction-to-programming-with-python)
+* [CS50's Introduction to Computer Science](https://www.edx.org/course/introduction-computer-science-harvardx-cs50x)
 
 #### Debugging
 * [pdb](https://www.blog.pythonlibrary.org/2020/07/07/python-101-debugging-your-code-with-pdb/) - more about debugging
