@@ -74,7 +74,11 @@ Re-orient horizontal seismometers
 * [Packaging in Python](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
 * [Flake8](https://flake8.pycqa.org/): Python style guide checker
 * [strftime](http://strftime.org/): Python strftime reference
-- [regex101](https://regex101.com/): Online regular expressions tester and debugger
+* [regex101](https://regex101.com/): Online regular expressions tester and debugger
+
+#### Debugging
+* [pdb](https://www.blog.pythonlibrary.org/2020/07/07/python-101-debugging-your-code-with-pdb/) - more about debugging
+* 
 
 ## Documents
 
