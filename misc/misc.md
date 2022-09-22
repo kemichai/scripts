@@ -80,6 +80,10 @@ Re-orient horizontal seismometers
 * [CS50's Introduction to Computer Science](https://www.edx.org/course/introduction-computer-science-harvardx-cs50x)
 * [The Best of the Best Practices (BOBP) Guide for Python](https://gist.github.com/sloria/7001839)
 
+### ML
+* [Visual explanations of core machine learning concepts](https://mlu-explain.github.io/)
+
+
 #### Debugging
 * [pdb](https://www.blog.pythonlibrary.org/2020/07/07/python-101-debugging-your-code-with-pdb/) - more about debugging
 * 
