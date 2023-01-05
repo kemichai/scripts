@@ -86,7 +86,6 @@ Re-orient horizontal seismometers
 
 #### Debugging
 * [pdb](https://www.blog.pythonlibrary.org/2020/07/07/python-101-debugging-your-code-with-pdb/) - more about debugging
-* 
 
 ## Documents
 
@@ -107,13 +106,6 @@ Re-orient horizontal seismometers
 * [Rock Physics reference card](https://static.squarespace.com/static/549dcda5e4b0a47d0ae1db1e/54a06d6ee4b0d158ed95f696/54a06d6fe4b0d158ed960042/1374593568367/Cheatsheet_Rock_Physics.pdf) 
 * [Re-thinking research assessment](https://sfdora.org/resource/rethinking-research-assessment-for-the-greater-good/)
 
-Seismology
-* [A Python Library for Teaching Computation to Seismology Students](https://doi.org/10.1785/0220170246)
-
-Tectonics
-- [GPlates](https://www.earthbyte.org/category/gplates): A desktop software for
-  the interactive visualisation of plate-tectonics
-
 
 Spherical coordinates
 * [GeoGebra](https://www.geogebra.org/m/aqB75qMa) - Spherical Coordinates Demonstration tool.
@@ -124,22 +116,12 @@ Books
 * [Figures](https://levee.wustl.edu/seismology/book/) from An Introduction to Seismology, Earthquakes, and Earth Structure
 
 
-### Webinars - tutorials - videos - podcasts etc.
-* [IRIS webinars](https://www.youtube.com/playlist?list=PLD4D607C2FA317E6D)
-
-Short tutorials
-- [Travel time curves - IRIS](https://www.iris.edu/hq/inclass/animation/traveltime_curves_how_they_are_created)
-
-Alpine Fault and NZ 
+Alpine Fault and NZ in general
+---
 * [RNZ podcast](https://www.rnz.co.nz/national/programmes/ourchangingworld/audio/2018822479/listening-to-the-hum-of-the-alpine-fault)
 * [YT link 1](https://www.youtube.com/watch?v=bU_O6Qe6Knk)
 * [YT link 2](https://www.youtube.com/watch?v=5fUj7zjbAFw)
 * [YT link 3](https://www.youtube.com/watch?v=ohVdKx8PDGY)
 * [YT link 4](https://www.youtube.com/watch?v=mpAWLz4W1Go) - How mountains are destroyed ...
 * [Kaikoura earthquake](https://www.wgtn.ac.nz/sgees/about/news/news-archives/2016-news/victoria-scientists-respond-to-a-quake-hit-new-zealand)
-
-### Ambiance
-* [Radio from around the globe](http://radio.garden/visit/whanganui/Xv3zQx2R)
-* [Background sounds](https://defonic.com/)
-
 
