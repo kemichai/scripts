@@ -1,17 +1,5 @@
 # miscallaneous
 
-## Earthquake detection and location
-* [Eqcorrscan](https://eqcorrscan.readthedocs.io/en/latest/api.html#utils) - detect repeating and near-repeating seismicity.
-* [QuakeMigrate](https://github.com/QuakeMigrate/QuakeMigrate) - Python package for automatic earthquake detection.
-* [LOC-FLOW](https://github.com/Dal-mzhang/LOC-FLOW) - “hands-free” earthquake location workflow to process continuous seismic records.
-* [seisbench](https://github.com/seisbench/seisbench) - Machine learning in seismology.
-* [PhaseNet](https://github.com/wayneweiqiang/PhaseNet) - A Deep-Neural-Network-Based Seismic Arrival Time Picking Method.
-* [REAL](https://github.com/Dal-mzhang/REAL) - Rapid Earthquake Association and Location.
-* [FDTCC](https://github.com/MinLiu19/FDTCC) - Fast double-difference cross-correlation.
-* [hypoDD](https://www.ldeo.columbia.edu/~felixw/hypoDD.html) - Relative earthquake locations.
-* [GrowClust](https://github.com/dttrugman/GrowClust) - Relative earthquake locations.
-* [Match&Locate](https://github.com/Dal-mzhang/MatchLocate2) - Detect and locate events from continuous seismic waveforms using templates.
-* [HYPOINVERSE](https://www.usgs.gov/node/279394) - Standard earthquake location program.
 
 ## RFs
 * [RF](https://rf.readthedocs.io/en/latest/index.html) -  Python framework for receiver function analysis.
