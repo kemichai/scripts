@@ -16,16 +16,6 @@ Re-orient horizontal seismometers
 * [SAC](http://ds.iris.edu/ds/nodes/dmc/forms/sac/) - seismic data handling and waveform processing
 * [SeisGo](https://github.com/xtyangpsp/SeisGo/tree/master/) - A ready-to-go Python toolbox for seismic data analysis
 
-## Maps
-* [PyGMT](https://www.pygmt.org/latest/overview.html) - Python wrapper for the Generic Mapping Tools (GMT)
-* [GMT](https://docs.generic-mapping-tools.org/dev/index.html) - Generic Mapping Tools
-
-
-## Focal mechanism
-- [gCAP](http://www.eas.slu.edu/People/LZhu/home.html)- Inversion of seismic source parameters with generalized Cut And Paste (gCAP) method.
-- [pydmt](https://github.com/fabriziobernardi/pydmt) -Time Domain Moment Tensor Inversion.
-- [HASH](https://earthquake.usgs.gov/research/software/#HASH) - First motion polarity.
-- [MTfit](https://djpugh.github.io/MTfit/) - Bayesian Moment Tensor Inversion Code by David J Pugh
 
 ## Geophysics
 * [SimPEG](http://docs.simpeg.xyz/index.html) - A python package for simulation and gradient based parameter estimation in the context of geophysical applications.
@@ -94,9 +84,6 @@ Re-orient horizontal seismometers
 * [Rock Physics reference card](https://static.squarespace.com/static/549dcda5e4b0a47d0ae1db1e/54a06d6ee4b0d158ed95f696/54a06d6fe4b0d158ed960042/1374593568367/Cheatsheet_Rock_Physics.pdf) 
 * [Re-thinking research assessment](https://sfdora.org/resource/rethinking-research-assessment-for-the-greater-good/)
 
-
-Spherical coordinates
-* [GeoGebra](https://www.geogebra.org/m/aqB75qMa) - Spherical Coordinates Demonstration tool.
 
 Books
 * [New Manual of Seismological Observatory Practice (NMSOP-2)](https://bib.telegrafenberg.de/publizieren/bibliotheksverlag/nmsop)
