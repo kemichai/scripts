@@ -47,23 +47,9 @@ Re-orient horizontal seismometers
 * [dataviz](https://clauswilke.com/dataviz/)
 
 ### Coding
-* [Conda cheat sheet](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf)
-* [Git cheat sheet](https://education.github.com/git-cheat-sheet-education.pdf)
-* [README](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
-* [Packaging in Python](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
-* [Flake8](https://flake8.pycqa.org/): Python style guide checker
-* [strftime](http://strftime.org/): Python strftime reference
-* [regex101](https://regex101.com/): Online regular expressions tester and debugger
-* [CS50's Introduction to Programming with Python](https://www.edx.org/course/cs50s-introduction-to-programming-with-python)
-* [CS50's Introduction to Computer Science](https://www.edx.org/course/introduction-computer-science-harvardx-cs50x)
-* [The Best of the Best Practices (BOBP) Guide for Python](https://gist.github.com/sloria/7001839)
 
 ### ML
 * [Visual explanations of core machine learning concepts](https://mlu-explain.github.io/)
-
-
-#### Debugging
-* [pdb](https://www.blog.pythonlibrary.org/2020/07/07/python-101-debugging-your-code-with-pdb/) - more about debugging
 
 ## Documents
 
