@@ -1,9 +1,8 @@
 """
 ...
 
-Location: Chavannes-pres-renens, CH
 Date: Feb 2023
-Author: Konstantinos Michailos
+Author: KM
 """
 print("Think of a number between 0 and 100...")
 # TODO: Need to change this so it does not print the guessed number in the monitor...
