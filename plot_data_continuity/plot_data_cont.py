@@ -6,6 +6,7 @@ Original codes by CJC
 :Date: Dec 2021
 :Author: K. Michailos
 """
+
 import glob
 import numpy as np
 import matplotlib.dates as mpdates
@@ -18,7 +19,6 @@ WIZpath = '/Volumes/GeoPhysics_05/users-data/michaiko/WIZARD'
 DFDpath = '/Volumes/GeoPhysics_09/users-data/chambeca/DFDP_archive/day_volumes_S'
 DFDP10path = '/Volumes/GeoPhysics_05/users-data/michaiko/DFDP10/'
 alfa08path = '/Volumes/GeoPhysics_05/users-data/michaiko/ALFA08/'
-
 
 # Give station names
 stations = ['COSA', 'EORO', 'MTFO', 'WHAT2', 'WHYM', 'POCR2',
@@ -87,7 +87,6 @@ plt.setp([a.get_yticklabels() for a in fig.axes[:]], visible=False)
 ax.fmt_xdata = mpdates.DateFormatter('%Y-%m-%d')
 fig.autofmt_xdate()
 plt.show()
-
 
 fig.savefig("cont_plot.svg", dpi=500, facecolor='w', edgecolor='w',
             orientation='landscape', format='svg',
